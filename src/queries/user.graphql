@@ -1,0 +1,29 @@
+query me {
+  me {
+    username
+    group
+    place {
+      name
+      headcount
+      retailPrice
+    }
+  }
+}
+
+query listUsers($place: ID!) {
+  listUsers(place: $place) {
+    username
+    email
+    group
+  }
+}
+
+mutation createUser($input: UserInput!) {
+  createUser(input: $input) {
+    password
+  }
+}
+
+mutation deleteUser($username: String!) {
+  deleteUser(username: $username)
+}

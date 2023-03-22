@@ -1,0 +1,34 @@
+query listAllocations($place: ID!, $from: AWSDate!, $to: AWSDate!) {
+  listAllocations(place: $place, from: $from, to: $to) {
+    date
+    people {
+      id
+      photo
+      name
+      department
+    }
+  }
+}
+
+query listPersonAllocations($person: ID!, $from: AWSDate!, $to: AWSDate!) {
+  listPersonAllocations(person: $person, from: $from, to: $to) {
+    place {
+      name
+      personPrice
+      leaderPrice
+    }
+    date
+    people {
+      id
+    }
+  }
+}
+
+mutation setAllocation($input: AllocationInput!) {
+  setAllocation(input: $input) {
+    place {
+      id
+    }
+    date
+  }
+}

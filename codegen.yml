@@ -1,0 +1,20 @@
+overwrite: true
+schema:
+  ${API_URL}:
+    headers:
+      X-Api-Key: ${API_KEY}
+documents: src/**/*.graphql
+generates:
+  src/generated/graphql.tsx:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      withHooks: true
+      withHOC: false
+      withComponents: true
+      hooksImportFrom: '@apollo/react-hooks'
+  ./graphql.schema.json:
+    plugins:
+      - introspection

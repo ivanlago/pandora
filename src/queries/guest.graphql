@@ -1,0 +1,11 @@
+query listMyAllocations($from: AWSDate!, $to: AWSDate!) {
+  listMyAllocations(from: $from, to: $to) {
+    date
+    people {
+      id
+      name
+      photo
+      department
+    }
+  }
+}

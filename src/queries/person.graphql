@@ -1,0 +1,51 @@
+query listPeople($filter: TablePersonFilterInput) {
+  listPeople(filter: $filter) {
+    items {
+      id
+      photo
+      name
+      fullName
+      department
+      graduation
+      courses
+      phone
+      rg
+      cpf
+      bankDetails
+    }
+  }
+}
+
+query getPerson($id: ID!) {
+  getPerson(id: $id) {
+    id
+    photo
+    name
+    fullName
+    department
+    graduation
+    courses
+    phone
+    rg
+    cpf
+    bankDetails
+  }
+}
+
+mutation createPerson($input: CreatePersonInput!) {
+  createPerson(input: $input) {
+    id
+  }
+}
+
+mutation updatePerson($input: UpdatePersonInput!) {
+  updatePerson(input: $input) {
+    id
+  }
+}
+
+mutation deletePerson($input: DeletePersonInput!) {
+  deletePerson(input: $input) {
+    id
+  }
+}

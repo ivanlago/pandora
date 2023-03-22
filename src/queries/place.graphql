@@ -1,0 +1,41 @@
+query listPlaces($filter: TablePlaceFilterInput) {
+  listPlaces(filter: $filter) {
+    items {
+      id
+      name
+      headcount
+      personPrice
+      leaderPrice
+      retailPrice
+    }
+  }
+}
+
+query getPlace($id: ID!) {
+  getPlace(id: $id) {
+    id
+    name
+    headcount
+    personPrice
+    leaderPrice
+    retailPrice
+  }
+}
+
+mutation createPlace($input: CreatePlaceInput!) {
+  createPlace(input: $input) {
+    id
+  }
+}
+
+mutation updatePlace($input: UpdatePlaceInput!) {
+  updatePlace(input: $input) {
+    id
+  }
+}
+
+mutation deletePlace($input: DeletePlaceInput!) {
+  deletePlace(input: $input) {
+    id
+  }
+}
